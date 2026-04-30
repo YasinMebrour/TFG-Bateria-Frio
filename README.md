@@ -72,6 +72,10 @@ docker compose up --build
 
 El repositorio esta preparado para no publicar secretos locales. Los valores sensibles deben definirse en `.env` o variables de entorno, y `.env` esta excluido del control de versiones. El archivo `.env.example` solo contiene valores de ejemplo.
 
+## Licencia
+
+Este proyecto se publica bajo licencia MIT. Consulta el archivo `LICENSE` para ver los terminos completos.
+
 ## Utilidad del proyecto
 
 La solucion esta pensada como demostrador tecnico para entornos donde el consumo energetico es un factor critico. Su valor esta en unir datos, prediccion y planificacion en una unica herramienta operativa, facilitando decisiones mas rapidas y trazables sobre el uso de energia en instalaciones de frio.
