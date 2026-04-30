@@ -1,0 +1,63 @@
+.tab {
+  --tab-padding: 1.25rem;
+  --tab-bg: rgb(0 0 0 / 70%);
+  --tab-active-bg: #fff;
+  --tab-color: #fff;
+  --tab-active-color: #000;
+}
+
+/* sólo oculta los controles de la pestaña (radio y checkbox) */
+.tab input[type="radio"]{
+  display: none;
+}
+
+.tab > input[type="checkbox"] { display: none; }
+
+.tab input:not(:checked) + label + * { display: none }
+
+/* Opción B: solo los label que siguen inmediatamente a un input (radio) */
+.tab input[type="radio"] + label {
+  color: var(--tab-color);
+  cursor: pointer;
+  padding: var(--tab-padding);
+}
+
+/* 2. Estado activo: lo pones *tras* la genérica */
+.tab input[type="radio"]:checked + label {
+  background-color: var(--tab-active-bg);
+  color:            var(--tab-active-color);
+}
+
+
+
+
+@media (max-width: 575px) {
+  .tab label { width: 100% }
+}
+
+.tab-wrapper {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--tab-bg);
+}
+
+.tab-content {
+  width: 100%;
+  padding: var(--tab-padding);
+  background-color: var(--tab-active-bg);
+}
+
+@media (min-width: 576px) {
+  .tab-content { order: 9999 }
+}
+
+
+
+/* src/pages/ModoAhorroDiaEditor.module.css */
+.row {
+  display: grid;
+  /* primera columna = 75%, segunda = 25% */
+  grid-template-columns: 70% 30%;
+  gap: 2rem;
+}

@@ -1,0 +1,180 @@
+/* ——— CONTENEDOR PRINCIPAL ——— */
+.panel-control{
+  max-width:100%;
+  width:450px;
+  max-width:100%;
+  background:#d4d5d7;
+  border:2px solid #000;
+  padding:10px 14px 16px;
+  box-shadow:inset 0 0 6px #666;
+  user-select:none;
+}
+
+/* ——— TÍTULO ——— */
+.title-box{
+  width:fit-content;
+  margin:0 auto 4px;
+  padding:2px 34px;
+  border:1px solid #000;
+  background:#e9e9e9;
+  font:bold 0.9rem/1 sans-serif;
+}
+
+/* ——— FECHA / HORA ——— */
+.datetime{font-size:0.8rem;margin-bottom:6px;}
+
+/* ——— TABLA DE HORARIOS ——— */
+.schedule{
+  border-collapse:collapse;
+  margin-bottom:10px;
+}
+.day{
+  width:150px;
+}
+.cell{
+  align-items: center;
+  text-align: center;
+  width:15px;
+  height:26px;
+}
+
+
+
+.g0,.g1,.c0,.c2,.c4{border-left:2px solid #000;}
+.g2,.c1,.c3,.c5{border-right:2px solid #000;}
+
+  
+
+.schedule input{
+  text-align: center;
+}
+
+/* Borde superior exclusivo de la primera fila, excluyendo la columna de días */
+.schedule tbody tr:first-child td:not(:first-child) {
+  border-top: 1px solid #000;
+}
+
+.schedule tbody tr:last-child td:not(:first-child) {
+  border-bottom: 1px solid #000;
+}
+
+
+/* ——— PARÁMETROS INFERIORES ——— */
+.params{display:flex;flex-direction:column;gap:4px;margin-top:4px;}
+.row{display:flex;align-items:center;gap:4px;}
+.label{width:260px;}
+.unit{min-width:16px;}
+
+.cell-value{
+  width:50px;
+  height:22px;
+  border:1px solid #000;
+  background:#cfd4d6;
+  text-align:center;
+}
+
+.cell-value-down{
+  width:56px;
+  height:22px;
+  border:1px solid #000;
+  background:#cfd4d6;
+  text-align:center;
+}
+
+/* ——— BOTÓN TOGGLE ——— */
+.toggle{
+  width:56px;
+  height:24px;
+  font-weight:bold;
+  border:1px solid #000;
+  cursor:pointer;
+  padding:0;
+}
+.toggle.on {background:#00c000;}
+.toggle.off{background:#c0c0c0;}
+
+/* ——— PANEL SECUNDARIO ——— */
+/* ——— PANEL SECUNDARIO ——— */
+.panel{
+  /* ↓  ancho “de diseño”; se respeta mientras haya espacio  */
+  width:90%;
+
+  /* ↓  nunca superará el ancho disponible en el viewport   */
+  max-width:100%;
+  max-height: 409px;
+
+  /* ↓  si aun así la tabla excede el ancho, aparece scroll */
+  overflow-x:auto;
+
+  background:#d5d6d7;
+  border:2px solid #888;
+  padding:10px 14px;
+  box-shadow:inset 0 0 6px #777;
+  user-select:none;
+}
+
+
+.header-row{display:flex;justify-content:center;align-items:center;margin-bottom:15px;}
+
+.title{
+  border:2px solid #000000;
+  padding:5px 5px;
+  font:bold 1.16rem/1 sans-serif;
+  letter-spacing:.1em;
+  background:#cfd4d6;
+  margin:0 auto;
+  text-align:center;
+}
+
+/* ——— OPCIONES ——— */
+.code{display:none;}   /* muestra «C3-40» si es necesario */
+
+
+
+
+
+
+
+.row {
+  display: flex;
+  align-items: center; /* Esto centra verticalmente */
+  gap: 10px; /* Espacio horizontal entre el label y los botones */
+}
+
+.button-group {
+  display: flex;
+  gap: 6px;
+}
+
+.modo {
+  padding: 3px 18px;
+  border: 1px solid #000;
+  background-color: #cfd4d6;
+  color: #000;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: none;
+}
+
+.modo.activo {
+  color: #fff;
+}
+
+/* Colores activos */
+.modo.optimizado.activo {
+  background-color: #007bff;
+}
+
+.modo.manual-camara.activo {
+  background-color: #28a745;
+}
+
+.modo.manual-gemelo.activo {
+  background-color: #ffc107;
+  color: #000; /* fondo amarillo, letra negra */
+}
+
+ 
+

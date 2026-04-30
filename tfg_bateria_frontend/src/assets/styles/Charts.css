@@ -1,0 +1,58 @@
+/* src/assets/styles/Config.module.css */
+
+.demo {
+  /* Estilos opcionales para el contenedor principal */
+  padding: 1rem;
+}
+
+.tab {
+  --tab-padding: 1.25rem;
+  --tab-bg: rgb(0 0 0 / 70%);
+  --tab-active-bg: #fff;
+  --tab-color: #fff;
+  --tab-active-color: #000;
+}
+
+.tab input {
+  display: none;
+}
+
+.tab input:checked + label {
+  background-color: var(--tab-active-bg);
+  color: var(--tab-active-color);
+}
+
+.tab input:not(:checked) + label + * {
+  display: none;
+}
+
+.tab label {
+  color: var(--tab-color);
+  cursor: pointer;
+  padding: var(--tab-padding);
+}
+
+@media (max-width: 575px) {
+  .tab label {
+    width: 100%;
+  }
+}
+
+.tab-wrapper {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--tab-bg);
+}
+
+.tab-content {
+  width: 100%;
+  padding: var(--tab-padding);
+  background-color: var(--tab-active-bg);
+}
+
+@media (min-width: 576px) {
+  .tab-content {
+    order: 9999;
+  }
+}

@@ -1,0 +1,220 @@
+.sidebar {
+    width: 250px;
+    background-color: #f5f5f5;
+    padding: 15px;
+    height: 100vh;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+  
+.title {
+font-size: 18px;
+font-weight: 600;
+padding-bottom: 10px;
+border-bottom: 1px solid #ddd;
+text-align: left;
+color: #333;
+}
+
+.list {
+margin-top: 15px;
+}
+
+.measurement-container {
+margin-bottom: 10px;
+}
+
+.measurement-header {
+cursor: pointer;
+font-size: 16px;
+background: #ffffff;
+padding: 8px 12px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-radius: 8px;
+transition: background 0.3s;
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.measurement-header:hover {
+background: #eee;
+}
+
+.text {
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+max-width: 180px;
+color: #333;
+}
+
+.icon {
+    font-size: 16px;
+    color: black;
+}
+  
+.fields-container {
+margin-top: 5px;
+padding: 8px;
+border-radius: 5px;
+background: #ffffff;
+box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.field-item {
+padding: 6px 10px;
+font-size: 14px;
+color: #666;
+border-bottom: 1px solid #eee;
+}
+  
+
+.field-item {
+  padding: 8px;
+  background: white;
+  border-radius: 5px;
+  margin: 5px 0;
+  cursor: grab;
+  transition: background 0.3s;
+}
+
+.field-item:hover {
+  background: #e0e0e0;
+}
+
+.field-item:active {
+  cursor: grabbing;
+}
+
+
+.sidebar {
+  width: 250px;           /* o el ancho que prefieras */
+  height: 100vh;          /* ocupa toda la ventana */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;       /* ocultar overflow general */
+}
+
+/* la cabecera (Measurements) ocupa su espacio natural,
+   y la lista el resto con overflow */
+.sidebar .list {
+  flex: 1;                /* estira hasta el resto de la altura */
+  overflow-y: auto;       /* scroll vertical si hay muchos items */
+}
+
+
+/* --- CONTENEDOR PRINCIPAL ----------------------------------- */
+.sidebar {
+  width: 260px;                 /* ancho fijo y claro */
+  background: #fafafa;          /* gris muy ligero */
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+  padding: 0.75rem 0.5rem;
+  overflow-y: auto;             /* scroll si hay muchos datos */
+}
+
+/* --- TITULAR ------------------------------------------------- */
+.sidebar .title {
+  margin: 0 0 0.75rem 0;
+  padding-left: 0.25rem;
+  font-weight: 600;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #4b4b4b;
+}
+
+/* --- BLOQUES DE NIVEL 1 (Buckets) ---------------------------- */
+.bucket-container + .bucket-container {
+  margin-top: 0.5rem;           /* separación entre buckets */
+}
+
+.bucket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.45rem 0.6rem;
+  background: #ffffff;
+  border: 1px solid #dedede;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: background 0.15s;
+}
+
+.bucket-header:hover {
+  background: #f1f1f1;
+}
+
+.bucket-header .text {
+  font-weight: 600;
+  color: #333;
+}
+
+.bucket-header .icon {
+  font-weight: 700;
+}
+
+/* --- BLOQUES DE NIVEL 2 (Measurements) ----------------------- */
+.measurements-container {
+  margin-top: 0.35rem;
+  margin-left: 0.75rem;         /* indentación jerárquica */
+}
+
+.measurement-container + .measurement-container {
+  margin-top: 0.3rem;
+}
+
+.measurement-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.35rem 0.55rem;
+  background: #f8f8f8;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  transition: background 0.15s;
+}
+
+.measurement-header:hover {
+  background: #ececec;
+}
+
+.measurement-header .text {
+  font-weight: 500;
+  color: #444;
+}
+
+/* --- BLOQUES DE NIVEL 3 (Fields) ----------------------------- */
+.fields-container {
+  margin-top: 0.3rem;
+  margin-left: 1rem;
+}
+
+/* Cada field como “pill” arrastrable */
+.field-item {
+  user-select: none;
+  padding: 0.28rem 0.55rem;
+  margin-bottom: 0.25rem;
+  background: #ffffff;
+  border: 1px solid #d5d5d5;
+  border-radius: 16px;
+  font-size: 13px;
+  color: #555;
+  cursor: grab;
+  transition: background 0.12s, border 0.12s;
+}
+
+.field-item:hover {
+  background: #f3f3f3;
+  border-color: #c7c7c7;
+}
+
+.field-item:active {
+  cursor: grabbing;
+  background: #eaeaea;
+}

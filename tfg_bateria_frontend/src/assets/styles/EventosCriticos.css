@@ -1,0 +1,118 @@
+.eventos-criticos-wrapper {
+  border: 1px solid #ccc;
+  background-color: #fafafa;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 10px;
+  height:32%; /* AJUSTE DE ALTURA MÁXIMA */
+  display: flex;
+  flex-direction: column;
+}
+
+.eventos-titulo {
+  text-align: center;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.eventos-scroll {
+  overflow-y: auto;
+  flex-grow: 1;
+  padding-right: 6px;
+}
+
+.sin-eventos {
+  text-align: center;
+  font-style: italic;
+  color: #666;
+}
+
+.evento-box {
+  padding: 8px 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  font-size: 0.80rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  text-align: left;        /* TEXTO ALINEADO A LA IZQUIERDA */
+  line-height: 1.4;
+}
+
+.evento-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.evento-tipo {
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.evento-desc {
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.evento-horas {
+  font-style: italic;
+  flex-shrink: 0;
+}
+
+
+.eventos-criticos-wrapper {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 1rem;
+  background: #fafafa;
+}
+
+.eventos-titulo {
+  margin: 0 0 0.5rem 0;
+  text-align: center;
+}
+
+.eventos-scroll {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.evento-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.evento-fecha {
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.evento-tipo {
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.evento-desc {
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.eventos-criticos-wrapper{border:1px solid #ccc;border-radius:6px;padding:.75rem;background:#f8f9fa}
+.eventos-scroll{max-height:230px;overflow-y:auto;display:flex;flex-direction:column;gap:.5rem}
+.evento-box{padding:.4rem .6rem;border-radius:4px;font-size:.85rem;display:flex;gap:.6rem;align-items:center}
+.evento-fecha{min-width:55px;font-weight:600}
+.evento-nombre{flex:1}
+.evento-valor{font-weight:600}
+.sin-eventos{text-align:center;color:#666}

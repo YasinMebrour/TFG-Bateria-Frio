@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  backend_ia:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: fastapi_ia
+    # Solo para desarrollo (hot reload), si no, quítalo:
+    volumes:
+      - ./app:/app/app
+    ports:
+      - "8001:8001"
+    environment:
+      - TZ=Europe/Madrid

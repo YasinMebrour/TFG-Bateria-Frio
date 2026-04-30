@@ -1,0 +1,72 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./tfg_bateria_backend
+      dockerfile: Dockerfile
+    container_name: fastapi_app
+    volumes:
+      - ./tfg_bateria_backend:/app
+    ports:
+      - "8000:8000"
+    environment:
+      TZ: Europe/Madrid
+      DATABASE_URL: "postgresql+psycopg2://${POSTGRES_USER:-myuser}:${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}@db:5432/${POSTGRES_DB:-mydb}"
+      SECRET_KEY: "${SECRET_KEY:?Set SECRET_KEY in .env}"
+      CELERY_BROKER_URL: redis://redis:6379/0  # Para que FastAPI/Celery usen Redis como broker
+      IA_URL: http://host.docker.internal:8001/consumo/prediccion
+    depends_on:
+      - redis
+
+  worker:
+    build:
+      context: ./tfg_bateria_backend
+      dockerfile: Dockerfile
+    container_name: celery_worker
+    # Ejecuta el worker junto con Celery Beat para que se lancen las tareas periódicas
+    command: celery -A app.celery_app.celery_app worker --beat --loglevel=info  # Ajusta el path si es necesario
+    environment:
+      TZ: Europe/Madrid
+      DATABASE_URL: "postgresql+psycopg2://${POSTGRES_USER:-myuser}:${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}@db:5432/${POSTGRES_DB:-mydb}"
+      SECRET_KEY: "${SECRET_KEY:?Set SECRET_KEY in .env}"
+      CELERY_BROKER_URL: redis://redis:6379/0
+      IA_URL: http://host.docker.internal:8001/consumo/prediccion
+    volumes:
+      - ./tfg_bateria_backend:/app
+    depends_on:
+      - redis
+      - backend
+
+  redis:
+    image: redis:7-alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+  frontend:
+    build:
+      context: ./tfg_bateria_frontend
+      dockerfile: Dockerfile
+    container_name: react_app
+    volumes:
+      - ./tfg_bateria_frontend:/app
+    ports:
+      - "3000:3000"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    depends_on:
+      - backend
+
+
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-myuser}
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}"
+      POSTGRES_DB: ${POSTGRES_DB:-mydb}
+    ports:
+      - 5432:5432
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data

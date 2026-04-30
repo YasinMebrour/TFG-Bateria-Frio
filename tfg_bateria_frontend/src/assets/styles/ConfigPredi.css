@@ -1,0 +1,163 @@
+/* Reset global heredado de Gemelo.css */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  box-sizing: border-box;
+  background: #ffffff;
+  /* Forzar texto negro globalmente */
+  color: #000 !important;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+.config-container {
+  display: flex;
+  width: 100%;
+  height: 95vh;
+  /* Forzar texto negro en todo el contenedor */
+  color: #000 !important;
+}
+
+.config-left,
+.config-right {
+  flex: 0 0 50%;
+  padding: 20px;
+  background: #fff;
+  /* Forzar texto negro en columnas */
+  color: #000 !important;
+}
+
+.config-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  /* Forzar texto negro en filas */
+  color: #000 !important;
+}
+
+.config-label {
+  font-weight: 600;
+  margin-right: 1rem;
+  white-space: nowrap;
+  /* Forzar etiqueta negra */
+  color: #000 !important;
+}
+
+.config-input {
+  width: 120px;
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fafafa;
+  /* Forzar texto negro en inputs */
+  color: #000 !important;
+}
+
+.config-input::placeholder {
+  color: #666 !important; /* placeholder gris oscuro */
+}
+
+.btn-submit {
+  margin-top: 2rem;
+  padding: 0.6rem 1rem;
+  background-color: #0366d6;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background-color: #0252a2;
+}
+
+
+/* Centrar sólo el segundo date‐picker (‘Fin’) */
+.date-pair .date-group:last-child {
+  flex: 0 0 auto;   /* ancho automático */
+  margin: 0 auto;   /* centra el bloque dentro de su fila */
+}
+
+/* Hace que la fila del checkbox use flex-start y un pequeño gap */
+.checkbox-row {
+  justify-content: flex-start;  /* etiqueta + checkbox juntos a la izquierda */
+  gap: 0.5rem;                  /* espacio entre ellos */
+}
+
+/* Asegura que el checkbox sea visible y no herede width fijo */
+.checkbox-row .config-checkbox {
+  width: auto;      /* tamaño por defecto */
+  transform: scale(1.2); /* un pelín más grande para verlo bien */
+  margin: 0;        /* sin márgenes extra */
+}
+
+/* Añade en ConfigPredi.css: */
+.btn-toggle {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-toggle.active {
+  background-color: #28a745;
+  color: #fff;
+}
+.btn-toggle.inactive {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+/* Ejemplo rápido */
+.peso-panel   { margin-bottom:1rem; }
+.modo-box     { border:1px solid #ccc; border-radius:8px; padding:0.75rem; margin-bottom:0.75rem; }
+.modo-header  { font-weight:600; margin-bottom:0.5rem; }
+.peso-grid    { display:grid; grid-template-columns:repeat(5,1fr); gap:0.5rem; }
+.peso-item label { display:block; font-size:0.75rem; text-align:center; }
+.peso-item input { width:100%; text-align:center; }
+
+
+.config-ahorro-row {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;   /* espacio entre botón y días, ajusta a tu gusto */
+  margin-bottom: 1.6rem;
+}
+
+.dias-ahorro-panel {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.dias-ahorro-label {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  white-space: nowrap;
+}
+
+.config-group {
+  border: 1px solid #868686;
+  border-radius: 4px;
+  padding: 12px 14px;
+  margin: 1rem 0;
+}
+
+.grupo-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #444;
+}
+
+.input-error {
+  color: #b3261e;
+  font-size: 0.87em;
+  margin-top: 0.15em;
+  font-weight: 500;
+}

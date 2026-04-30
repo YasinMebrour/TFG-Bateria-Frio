@@ -1,0 +1,181 @@
+/* assets/styles/Users.css */
+
+/* Contenedor principal */
+.usuarios-page {
+  padding: 1rem;
+}
+
+/* Título */
+.usuarios-page h1 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Grid de dos columnas */
+.usuarios-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* Secciones */
+.usuarios-section {
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.05);
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.usuarios-section h2 {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
+/* Formulario de registro */
+.usuarios-form-group {
+  margin-bottom: 1rem;
+}
+
+.usuarios-form-group label {
+  display: block;
+  color: #000000;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.usuarios-form-group input,
+.usuarios-form-group select {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.btn-save-user {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.btn-save-user:hover {
+  background: #1e40af;
+}
+
+/* Tabla de usuarios */
+.usuarios-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+}
+
+.usuarios-table th,
+.usuarios-table td {
+  border: 1px solid #d1d5db;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.usuarios-table th {
+  background: #f9fafb;
+  font-weight: 500;
+}
+
+/* Selector de rol */
+.role-select {
+  width: 100%;
+  padding: 0.25rem;
+  font-size: 0.9rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Botón de guardar rol */
+.btn-save-role {
+  background: #16a34a;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.btn-save-role:hover {
+  background: #15803d;
+}
+
+/* assets/styles/Users.css */
+
+/* Form-group: label a la izquierda, input a la derecha */
+.usuarios-form-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* espacio entre label e input */
+}
+
+/* Opcional: fija un ancho para todos los labels */
+.usuarios-form-group label {
+  flex: 0 0 120px; /* ajusta 120px al ancho que necesites */
+  font-weight: 500;
+}
+
+/* El input ocupa el resto */
+.usuarios-form-group input,
+.usuarios-form-group select {
+  flex: 1 1 auto;
+}
+
+/* Los checkboxes no deben ocupar todo el ancho */
+.usuarios-form-group input[type="checkbox"] {
+  width: auto;
+  margin-left: 0.5rem; /* separa ligeramente del label */
+  flex: 0 0 auto;      /* evita que se expanda ocupando todo el espacio */
+}
+
+/* Contenedor para botones en línea */
+.usuarios-form-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Botones en línea (ancho automático) */
+.usuarios-btn-inline {
+  width: auto;
+  display: inline-block;
+}
+
+/* Botón crear usuario – ocupa todo el ancho */
+.btn-save-user {
+  display: block;    /* lo convierte en elemento de bloque */
+  width: 100%;       /* ancho completo */
+  margin-top: 1rem;  /* separa un poco del formulario */
+}
+
+
+/* --- BOTONES DE LA TABLA ----------------------------------- */
+
+/* Mantener juntos los botones dentro de la última columna      */
+.usuarios-table td:last-child {
+  white-space: nowrap;        /* evita el salto de línea        */
+}
+
+/* Asegurar que cada botón se comporte en línea                  */
+.btn-save-role {
+  display: inline-flex;       /* o inline-block si lo prefieres */
+  align-items: center;
+  margin-right: .5rem;        /* espacio entre Editar y Eliminar*/
+}
